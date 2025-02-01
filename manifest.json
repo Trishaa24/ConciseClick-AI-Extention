@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "ConciseClick ",
+    "version": "1.0",
+    "description": "Summarizes webpage content using AI.",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "server.js"
+    },
+    "host_permissions": ["<all_urls>"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
